@@ -6,11 +6,11 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 21:59:04 by ldatilio          #+#    #+#             */
-/*   Updated: 2023/08/26 18:49:08 by ldatilio         ###   ########.fr       */
+/*   Updated: 2023/08/26 20:48:53 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "../includes/Fixed.hpp"
 
 static const int _fractional_bits = 8;
 
