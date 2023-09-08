@@ -6,11 +6,11 @@
 #    By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/24 21:54:37 by ldatilio          #+#    #+#              #
-#    Updated: 2023/08/26 19:01:01 by ldatilio         ###   ########.fr        #
+#    Updated: 2023/09/08 15:00:30 by ldatilio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	a.out
+NAME	=	fixed
 
 INCLUDE	=	-I ./includes
 
