@@ -6,7 +6,7 @@
 #    By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/12 23:11:00 by ldatilio          #+#    #+#              #
-#    Updated: 2023/09/13 23:20:56 by ldatilio         ###   ########.fr        #
+#    Updated: 2023/09/14 21:11:43 by ldatilio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,4 +72,7 @@ fclean:		clean
 
 re:			fclean all
 
-.PHONY: all, clean, fclean, re
+val:		all
+	valgrind ./$(NAME)
+
+.PHONY: all, clean, fclean, re, val
