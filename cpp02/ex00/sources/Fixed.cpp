@@ -6,13 +6,13 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 21:59:04 by ldatilio          #+#    #+#             */
-/*   Updated: 2023/08/26 20:48:53 by ldatilio         ###   ########.fr       */
+/*   Updated: 2023/09/17 19:09:03 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Fixed.hpp"
 
-static const int _fractional_bits = 8;
+const int Fixed::_fractional_bits = 8;
 
 Fixed::Fixed(void) {
     this->_rawBits = 0;
