@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 17:46:53 by ldatilio          #+#    #+#             */
-/*   Updated: 2023/09/10 23:31:48 by ldatilio         ###   ########.fr       */
+/*   Updated: 2023/09/23 18:18:16 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <string>
 
 class ClapTrap {
-private:
+protected:
     std::string     _name;
     unsigned int    _hp;
     unsigned int    _ep;

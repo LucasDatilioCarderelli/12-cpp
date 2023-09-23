@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 17:41:13 by ldatilio          #+#    #+#             */
-/*   Updated: 2023/09/10 18:34:47 by ldatilio         ###   ########.fr       */
+/*   Updated: 2023/09/23 18:50:27 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int main(void) {
 	for (int i = 0; i < 5; i++) {
 		frag.highFivesGuys();
 	}
+	frag.attack("The air...");
 	std::cout << std::endl;
 	
 	return 0;

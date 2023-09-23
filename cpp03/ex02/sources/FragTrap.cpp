@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 17:19:07 by ldatilio          #+#    #+#             */
-/*   Updated: 2023/09/10 19:49:22 by ldatilio         ###   ########.fr       */
+/*   Updated: 2023/09/23 20:46:47 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,22 @@ FragTrap::~FragTrap() {
     std::cout << "FragTrap " <<  getName() << " Destroyed!" << std::endl;
 }
 
+void    FragTrap::attack(const std::string& target) {
+    if (_hp == 0) {
+        std::cout << "FragTrap " << this->_name << " is already Destoyed!" << std::endl;
+    } else if (_ep == 0) {
+        std::cout << "FragTrap " << this->_name << " has no EP!" << std::endl;
+    } else {
+        std::cout << "FragTrap " << _name << " attacks " << target 
+                  << ", causing " << _ad << " points of damage!"
+                  << std::endl;
+        _ep--;
+    }
+}
+
 void FragTrap::highFivesGuys(void) {
 	if (getHP() == 0) {
-		std::cout << getName() << " is already Destroyed!" << std::endl;
+		std::cout << "FragTrap " << getName() << " is already Destroyed!" << std::endl;
         return ;
     }
     

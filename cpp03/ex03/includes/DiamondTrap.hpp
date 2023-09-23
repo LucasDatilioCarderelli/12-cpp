@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 20:06:50 by ldatilio          #+#    #+#             */
-/*   Updated: 2023/09/10 23:52:21 by ldatilio         ###   ########.fr       */
+/*   Updated: 2023/09/23 18:46:41 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
     DiamondTrap(const DiamondTrap &diamondtrap);
     DiamondTrap& operator=(const DiamondTrap &diamondtrap);
     ~DiamondTrap();
-    
+
     void whoAmI();
 
     using ScavTrap::attack;

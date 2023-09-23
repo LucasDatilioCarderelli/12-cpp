@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 17:46:37 by ldatilio          #+#    #+#             */
-/*   Updated: 2023/09/10 18:06:15 by ldatilio         ###   ########.fr       */
+/*   Updated: 2023/09/23 20:45:12 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,4 +108,3 @@ unsigned int    ClapTrap::getEP(void) {
 unsigned int    ClapTrap::getAD(void) {
     return _ad;    
 }
-

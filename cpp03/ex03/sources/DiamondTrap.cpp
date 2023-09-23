@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 20:06:58 by ldatilio          #+#    #+#             */
-/*   Updated: 2023/09/10 23:50:08 by ldatilio         ###   ########.fr       */
+/*   Updated: 2023/09/23 18:59:24 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,8 @@ DiamondTrap& DiamondTrap::operator=(const DiamondTrap &diamondtrap) {
 }
 
 DiamondTrap::~DiamondTrap() {
-    std::cout << "DiamondTrap " <<  getName() << " Destroyed!" << std::endl;
+    std::cout << "DiamondTrap " << this->_name << " Destroyed!" << std::endl;
 }
-
 
 void DiamondTrap::whoAmI() {
     std::cout << "My name is " << _name

@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 17:17:24 by ldatilio          #+#    #+#             */
-/*   Updated: 2023/09/10 18:12:15 by ldatilio         ###   ########.fr       */
+/*   Updated: 2023/09/23 18:26:36 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ public:
     FragTrap(const FragTrap &fragtrap);
     FragTrap& operator=(const FragTrap &fragtrap);
     ~FragTrap();
+
+    void attack(const std::string& target);
 
     void highFivesGuys(void);
 };

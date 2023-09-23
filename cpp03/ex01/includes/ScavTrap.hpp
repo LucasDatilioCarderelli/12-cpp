@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 17:17:24 by ldatilio          #+#    #+#             */
-/*   Updated: 2023/09/09 17:34:11 by ldatilio         ###   ########.fr       */
+/*   Updated: 2023/09/23 20:45:01 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ public:
     ScavTrap& operator=(const ScavTrap &scavtrap);
     ~ScavTrap();
 
+    void attack(const std::string& target);
+    
     void guardGate();
 };
 

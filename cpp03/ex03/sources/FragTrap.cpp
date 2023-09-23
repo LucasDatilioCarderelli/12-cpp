@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 17:19:07 by ldatilio          #+#    #+#             */
-/*   Updated: 2023/09/10 23:47:42 by ldatilio         ###   ########.fr       */
+/*   Updated: 2023/09/23 19:02:15 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name) {
     FragTrap::setAD(30);
     std::cout << "FragTrap Construed with "
               << "Name: (" << this->_name << ") HP: (" << getHP() << ") "
-              << "EP: (" << getEP() << ") AD: (" << getAD() << ") "
+              << "EP: (" << this->_ep << ") AD: (" << getAD() << ") "
               << std::endl;
 }
 
@@ -44,9 +44,22 @@ FragTrap::~FragTrap() {
     std::cout << "FragTrap " <<  this->_name << " Destroyed!" << std::endl;
 }
 
+void    FragTrap::attack(const std::string& target) {
+    if (_hp == 0) {
+        std::cout << "FragTrap " << this->_name << " is already Destoyed!" << std::endl;
+    } else if (_ep == 0) {
+        std::cout << "FragTrap " << this->_name << " has no EP!" << std::endl;
+    } else {
+        std::cout << "FragTrap " << this->_name << " attacks " << target 
+                  << ", causing " << _ad << " points of damage!"
+                  << std::endl;
+        _ep--;
+    }
+}
+
 void FragTrap::highFivesGuys(void) {
 	if (getHP() == 0) {
-		std::cout << this->_name << " is already Destroyed!" << std::endl;
+		std::cout << "FragTrap " << getName() << " is already Destroyed!" << std::endl;
         return ;
     }
     
