@@ -6,7 +6,7 @@
 #    By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/17 22:38:37 by ldatilio          #+#    #+#              #
-#    Updated: 2023/09/24 20:14:47 by ldatilio         ###   ########.fr        #
+#    Updated: 2023/09/24 22:15:44 by ldatilio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,7 +65,7 @@ $(OBJ_DIR):
 	@$(MKDIR_P) $(OBJ_DIR)
 
 clean:
-	@rm -fr $(OBJ_DIR) garden_shrubbery
+	@rm -fr $(OBJ_DIR) *_shrubbery
 	@echo $(ITALIC_LIGHTER_YELLOW)"Objects deleted"$(RESET_COLOR)
 
 fclean:		clean
