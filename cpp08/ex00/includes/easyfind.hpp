@@ -6,9 +6,12 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 22:54:32 by ldatilio          #+#    #+#             */
-/*   Updated: 2023/10/12 13:24:50 by ldatilio         ###   ########.fr       */
+/*   Updated: 2023/10/15 00:41:10 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef EASYFIND_HPP
+#define EASYFIND_HPP
 
 #include <stdexcept>
 #include <iostream>
@@ -28,3 +31,5 @@ typename T::iterator easyfind(T& container, int value) {
     }
     throw std::runtime_error("Valor não encontrado no contêiner");
 }
+
+#endif // EASYFIND_HPP
