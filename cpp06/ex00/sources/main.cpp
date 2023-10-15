@@ -18,7 +18,6 @@ int main(int argc, char **argv) {
 		return 1;
 	}
 	std::string input = argv[1];
-	ScalarConverter scalar;
-	scalar.convert(input);
+	ScalarConverter::convert(input);
 	return 0;
 }
