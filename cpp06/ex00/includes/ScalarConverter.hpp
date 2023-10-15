@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 22:08:32 by ldatilio          #+#    #+#             */
-/*   Updated: 2023/10/14 20:33:01 by ldatilio         ###   ########.fr       */
+/*   Updated: 2023/10/15 20:00:24 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,13 @@ private:
     static void castFromDouble(void);
     static void castFromNothing(void);
     static void convertAndPrint(void);
-    
-public:
+
     ScalarConverter(void);
     ScalarConverter(const ScalarConverter &other);
     ScalarConverter &operator=(const ScalarConverter &other);
     ~ScalarConverter(void);
 
+public:
     static void convert(const std::string input);
 };
 

@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 22:07:24 by ldatilio          #+#    #+#             */
-/*   Updated: 2023/10/14 20:43:55 by ldatilio         ###   ########.fr       */
+/*   Updated: 2023/10/15 19:56:20 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,17 +90,21 @@ void ScalarConverter::castFromNothing(void) {
 void ScalarConverter::convertAndPrint() {
     if (static_cast<double>(ScalarConverter::i) != ScalarConverter::d) {
         std::cout << "char: impossible" << std::endl;
-        std::cout << "int: impossible" << std::endl;
+		if (ScalarConverter::i == -2147483648) {
+			std::cout << "int: impossible" << std::endl;	
+		} else {
+			std::cout << "int: " << ScalarConverter::i << std::endl;			
+		}
         std::cout << "float: " << ScalarConverter::f << "f" << std::endl;
         std::cout << "double: " << ScalarConverter::d << std::endl;
     }
     else {
         std::cout << "char: ";
-        if (ScalarConverter::i < 32 || ScalarConverter::i > 126)
+        if (ScalarConverter::i < 32 || ScalarConverter::i > 126) {
             std::cout << "Non displayable" << std::endl;
-        else
+		} else {
             std::cout << "'" << ScalarConverter::c << "'" << std::endl;
-
+		}
         std::cout << "int: " << ScalarConverter::i << std::endl;
 		std::string zero = (ScalarConverter::d - ScalarConverter::i == 0) ? ".0" : "";
         std::cout << "float: " << ScalarConverter::f << zero << "f" << std::endl;
