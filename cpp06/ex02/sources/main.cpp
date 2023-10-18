@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 21:02:45 by ldatilio          #+#    #+#             */
-/*   Updated: 2023/10/04 21:31:50 by ldatilio         ###   ########.fr       */
+/*   Updated: 2023/10/18 04:27:24 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ Base* generate() {
 }
 
 void identify(Base* p) {
-    if (dynamic_cast<A*>(p)) {
+    if (dynamic_cast<A*>(p) != NULL) {
         std::cout << "Type*: A" << std::endl;
-    } else if (dynamic_cast<B*>(p)) {
+    } else if (dynamic_cast<B*>(p) != NULL) {
         std::cout << "Type*: B" << std::endl;
-    } else if (dynamic_cast<C*>(p)) {
+    } else if (dynamic_cast<C*>(p) != NULL) {
         std::cout << "Type*: C" << std::endl;
     }
 }
