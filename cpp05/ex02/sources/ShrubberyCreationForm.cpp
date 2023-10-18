@@ -13,18 +13,18 @@
 #include "ShrubberyCreationForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm(void) : 
-    Form("ShrubberyCreationForm", 145, 137) {
+    AForm("ShrubberyCreationForm", 145, 137) {
     std::cout << "ShrubberyCreationForm constructor called" << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string target) :
-    Form("ShrubberyCreationForm", 145, 137) {
+    AForm("ShrubberyCreationForm", 145, 137) {
     std::cout << "ShrubberyCreationForm constructor called with target: "
               << target << std::endl;
     const_cast<std::string&>(this->target) = target;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other) : Form(other) {
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other) : AForm(other) {
 	*this = other;
 }
 
@@ -38,9 +38,9 @@ ShrubberyCreationForm::~ShrubberyCreationForm(void) {
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
     if (this->getIsSigned() == false) {
-        throw Form::UnsignedFormException();
+        throw AForm::UnsignedFormException();
     } else if (executor.getGrade() > this->getGradeToExeceute()) {
-        throw Form::GradeTooLowException();
+        throw AForm::GradeTooLowException();
     } else {
         std::string outputFileName = this->target + "_shrubbery";
         std::ofstream outputFile(outputFileName.c_str());

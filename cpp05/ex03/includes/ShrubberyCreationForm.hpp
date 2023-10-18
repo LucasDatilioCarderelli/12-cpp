@@ -16,7 +16,7 @@
 #include "AForm.hpp"
 #include <fstream>
 
-class ShrubberyCreationForm : public Form {
+class ShrubberyCreationForm : public AForm {
 public:
     ShrubberyCreationForm(void);
     ShrubberyCreationForm(const std::string target);

@@ -13,18 +13,18 @@
 #include "PresidentialPardonForm.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm(void) : 
-    Form("PresidentialPardonForm", 25, 5) {
+    AForm("PresidentialPardonForm", 25, 5) {
     std::cout << "PresidentialPardonForm constructor called" << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string target) :
-    Form("PresidentialPardonForm", 25, 5) {
+    AForm("PresidentialPardonForm", 25, 5) {
     std::cout << "PresidentialPardonForm constructor called with target: "
               << target << std::endl;
     const_cast<std::string&>(this->target) = target;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &other) : Form(other) {
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &other) : AForm(other) {
 	*this = other;
 }
 
@@ -38,9 +38,9 @@ PresidentialPardonForm::~PresidentialPardonForm(void) {
 
 void PresidentialPardonForm::execute(Bureaucrat const & executor) const {
     if (this->getIsSigned() == false) {
-        throw Form::UnsignedFormException();
+        throw AForm::UnsignedFormException();
     } else if (executor.getGrade() > this->getGradeToExeceute()) {
-        throw Form::GradeTooLowException();
+        throw AForm::GradeTooLowException();
     } else {
         std::cout << this->target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
     }

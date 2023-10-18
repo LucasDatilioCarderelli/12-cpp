@@ -15,7 +15,7 @@
 
 #include "AForm.hpp"
 
-class PresidentialPardonForm : public Form {
+class PresidentialPardonForm : public AForm {
 public:
     PresidentialPardonForm(void);
     PresidentialPardonForm(const std::string target);

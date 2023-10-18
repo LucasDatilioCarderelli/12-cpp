@@ -15,7 +15,7 @@
 int main(void) {
 	Bureaucrat bureaucrat("Admin", 1);
 	Intern intern;
-	Form *form;
+	AForm *form;
 
 	try {
 		std::cout << std::endl << "--- creating shrubbery form ---" << std::endl;

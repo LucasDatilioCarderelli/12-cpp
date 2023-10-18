@@ -6,25 +6,25 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 17:33:47 by ldatilio          #+#    #+#             */
-/*   Updated: 2023/09/24 18:08:53 by ldatilio         ###   ########.fr       */
+/*   Updated: 2023/10/09 02:07:28 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm(void) : 
-    Form("RobotomyRequestForm", 25, 5) {
+    AForm("RobotomyRequestForm", 72, 45) {
     std::cout << "RobotomyRequestForm constructor called" << std::endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string target) :
-    Form("RobotomyRequestForm", 72, 45) {
+    AForm("RobotomyRequestForm", 72, 45) {
     std::cout << "RobotomyRequestForm constructor called with target: "
               << target << std::endl;
     const_cast<std::string&>(this->target) = target;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &other) : Form(other) {
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &other) : AForm(other) {
 	*this = other;
 }
 
@@ -38,13 +38,11 @@ RobotomyRequestForm::~RobotomyRequestForm(void) {
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const {
     if (this->getIsSigned() == false) {
-        throw Form::UnsignedFormException();
+        throw AForm::UnsignedFormException();
     } else if (executor.getGrade() > this->getGradeToExeceute()) {
-        throw Form::GradeTooLowException();
+        throw AForm::GradeTooLowException();
     } else {
-		// unsigned int seed;
- 		// int randomizer = rand_r(&seed) % (2);
-		if (rand() & 1) {
+		if (rand() % 2) {
 			std::cout << this->target << " has been robotomized!" << std::endl; 
 		}
 		else {

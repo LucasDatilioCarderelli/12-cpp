@@ -24,10 +24,10 @@ class Intern {
 		Intern &operator=(const Intern &other);
 		~Intern(void);
 
-		Form* createShrubberyForm(const std::string target) const;
-		Form* createRobotomyForm(const std::string target) const;
-		Form* createPresidentialForm(const std::string target) const;
-		Form* makeForm(const std::string name, const std::string target);
+		AForm* createShrubberyForm(const std::string target) const;
+		AForm* createRobotomyForm(const std::string target) const;
+		AForm* createPresidentialForm(const std::string target) const;
+		AForm* makeForm(const std::string name, const std::string target);
 
 		class InvalidFormException : public std::exception {
 			public:

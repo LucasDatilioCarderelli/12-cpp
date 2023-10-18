@@ -16,7 +16,7 @@
 #include "AForm.hpp"
 #include <cstdlib>
 
-class RobotomyRequestForm : public Form {
+class RobotomyRequestForm : public AForm {
 public:
     RobotomyRequestForm(void);
     RobotomyRequestForm(const std::string target);
