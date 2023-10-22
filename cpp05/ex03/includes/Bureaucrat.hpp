@@ -19,7 +19,7 @@
 #include <exception>
 #include <ostream>
 
-class Form;
+class AForm;
 
 class Bureaucrat {
     const std::string   _name;
@@ -49,8 +49,8 @@ public:
             const char* what(void) const throw();
     };
 
-    void    signForm(Form & form);
-    void    executeForm(Form const & form);
+    void    signForm(AForm & form);
+    void    executeForm(AForm const & form);
 };
 
 std::ostream& operator<<(std::ostream &out, Bureaucrat const &b);

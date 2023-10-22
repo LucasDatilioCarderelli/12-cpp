@@ -18,7 +18,7 @@
 
 class Bureaucrat;
 
-class Form {
+class AForm {
     const std::string   _name;
     bool                _isSigned;
     const int           _gradeToSignin;
@@ -28,11 +28,11 @@ protected:
     const std::string target;
 
 public:
-    Form(void);
-    Form(const std::string name, const int gradeToSignin, const int gradeToExecute);
-    Form(Form const &other);
-    Form& operator=(Form const &other);
-    virtual ~Form(void);
+    AForm(void);
+    AForm(const std::string name, const int gradeToSignin, const int gradeToExecute);
+    AForm(AForm const &other);
+    AForm& operator=(AForm const &other);
+    virtual ~AForm(void);
     
     void beSigned(Bureaucrat &Bureaucrat);
     virtual void execute(Bureaucrat const & executor) const = 0;
@@ -58,6 +58,6 @@ public:
     bool getIsSigned(void) const;
 };
 
-std::ostream& operator<<(std::ostream &out, Form const &f);
+std::ostream& operator<<(std::ostream &out, AForm const &f);
 
 #endif // AFORM_HPP

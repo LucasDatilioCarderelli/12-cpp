@@ -31,25 +31,25 @@ Intern::~Intern(void) {
     std::cout << "Intern destructor called" << std::endl;
 }
 
-Form* Intern::createShrubberyForm(const std::string target) const {
+AForm* Intern::createShrubberyForm(const std::string target) const {
 	return new ShrubberyCreationForm(target);
 }
 
-Form* Intern::createRobotomyForm(const std::string target) const {
+AForm* Intern::createRobotomyForm(const std::string target) const {
 	return new RobotomyRequestForm(target);
 }
 
-Form* Intern::createPresidentialForm(const std::string target) const {
+AForm* Intern::createPresidentialForm(const std::string target) const {
   	return new PresidentialPardonForm(target);
 }
 
-Form* Intern::makeForm(const std::string name, const std::string target) {
+AForm* Intern::makeForm(const std::string name, const std::string target) {
 	std::string formType[3] = {
         "shrubbery creation", 
         "robotomy request", 
         "presidential pardon"
     };
-	Form* (Intern::*forms[3])(const std::string) const = {
+	AForm* (Intern::*forms[3])(const std::string) const = {
 		&Intern::createShrubberyForm,
 		&Intern::createRobotomyForm,
 		&Intern::createPresidentialForm

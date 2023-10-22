@@ -81,7 +81,6 @@ int Bureaucrat::getGrade() const {
     return _grade;
 }
 
-
 const char* Bureaucrat::GradeTooHighException::what(void) const throw() {
     return "Exception: Grade too high";
 }

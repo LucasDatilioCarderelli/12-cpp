@@ -34,7 +34,7 @@ int main(void) {
 	Bureaucrat bob("Bob", 43);
 	Form feedback("Feedback", 42, 42);
 	try {
-		bob.signForm(feedback);
+		feedback.beSigned(bob);
 	}
 	catch (std::exception& e) {
 		std::cerr << e.what() << std::endl;

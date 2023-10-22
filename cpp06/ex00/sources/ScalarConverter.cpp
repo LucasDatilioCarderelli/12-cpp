@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 22:07:24 by ldatilio          #+#    #+#             */
-/*   Updated: 2023/10/15 19:56:20 by ldatilio         ###   ########.fr       */
+/*   Updated: 2023/10/18 02:58:59 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,9 @@ ScalarConverter::~ScalarConverter(void) {}
 ScalarConverter::ScalarConverter(const ScalarConverter &other) {*this = other;}
 ScalarConverter& ScalarConverter::operator=(const ScalarConverter &other) {
 	if (this != &other) {}
-	return (*this);
+	return *this;
 }
+
 
 void ScalarConverter::convert(const std::string input) {
 	char *checkInt;

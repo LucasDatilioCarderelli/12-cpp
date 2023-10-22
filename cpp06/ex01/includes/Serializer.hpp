@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 23:02:47 by ldatilio          #+#    #+#             */
-/*   Updated: 2023/10/01 23:04:19 by ldatilio         ###   ########.fr       */
+/*   Updated: 2023/10/18 02:39:32 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@
 #include "Data.hpp"
 
 class Serializer {
-public:
-    Serializer();
+private:
+	Serializer();
     Serializer(Serializer const &other);
     Serializer &operator=(Serializer const &other);
     ~Serializer();
 
-
+public:
     static uintptr_t serialize(Data* ptr);
     static Data* deserialize(uintptr_t raw);
 };
