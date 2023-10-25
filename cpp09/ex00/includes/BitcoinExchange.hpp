@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 08:58:01 by ldatilio          #+#    #+#             */
-/*   Updated: 2023/10/21 22:37:15 by ldatilio         ###   ########.fr       */
+/*   Updated: 2023/10/24 05:05:23 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ public:
 
     void    display(std::string file) const;
     void	convertor(std::string date, double value) const;
-    std::map<std::string, double>       fromTextToMap(std::string fileName);
+	bool	isValidDate(std::string date) const;
+    std::map<std::string, double>	fromTextToMap(std::string fileName);
     
     class	NegativevalueException: public std::exception {
         public: virtual const char * what() const throw();

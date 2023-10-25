@@ -6,7 +6,7 @@
 #    By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/17 22:38:37 by ldatilio          #+#    #+#              #
-#    Updated: 2023/10/21 23:22:40 by ldatilio         ###   ########.fr        #
+#    Updated: 2023/10/25 03:20:58 by ldatilio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,7 +68,7 @@ fclean:		clean
 re:			fclean all
 
 val:		all
-	valgrind ./$(NAME)
+	valgrind ./$(NAME) input.txt
 
 test: all data.csv input.txt
 	./$(NAME) input.txt

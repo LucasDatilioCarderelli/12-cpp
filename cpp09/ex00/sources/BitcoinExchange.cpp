@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 08:55:55 by ldatilio          #+#    #+#             */
-/*   Updated: 2023/10/21 22:50:22 by ldatilio         ###   ########.fr       */
+/*   Updated: 2023/10/24 05:25:35 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,9 @@ void	BitcoinExchange::convertor(std::string date, double value) const {
 	if (_data.empty()) {
 		return ;
 	}
+	if (!isValidDate(date)) {
+		throw BitcoinExchange::BadDateException();
+	}
 	it = _data.find(date);
 	if (it == _data.end()) {
 		it = _data.lower_bound(date);
@@ -77,7 +80,7 @@ void	BitcoinExchange::convertor(std::string date, double value) const {
 	if (value < 0) {
 		throw BitcoinExchange::NegativevalueException();
 	}
-	if (value > static_cast<double>(INT_MAX)) {
+	if (value > 1000) {
 		throw BitcoinExchange::TooLargeNumberException();
 	}
 	std::cout << date << " => " << value << " = " << value * it->second << std::endl;
@@ -104,8 +107,23 @@ std::map<std::string, double>	BitcoinExchange::fromTextToMap(std::string fileNam
 	return dataMap;
 }
 
+bool BitcoinExchange::isValidDate(std::string date) const {
+	int year = static_cast<int>(strtol(date.substr(0, 4).c_str(), NULL, 10));
+    int month = static_cast<int>(strtol(date.substr(5, 2).c_str(), NULL, 10));
+    int day = static_cast<int>(strtol(date.substr(8, 2).c_str(), NULL, 10));
+	int daysInMonth[] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+    if (year < 0 || month < 1 || month > 12 || day < 1)
+        return false;
+
+    if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
+        daysInMonth[2] = 29;
+
+    return day <= daysInMonth[month];
+}
+
 const char* BitcoinExchange::NegativevalueException::what() const throw() {
-    return "Error: Value is negative";
+    return "Error: not a positive number.";
 }
 
 const char* BitcoinExchange::FileNotFoundException::what() const throw() {
@@ -113,9 +131,9 @@ const char* BitcoinExchange::FileNotFoundException::what() const throw() {
 }
 
 const char* BitcoinExchange::BadDateException::what() const throw() {
-    return "Error: Bad input";
+    return "Error: bad input";
 }
 
 const char* BitcoinExchange::TooLargeNumberException::what() const throw() {
-    return "Error: Too large number";
+    return "Error: too large number";
 }
