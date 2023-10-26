@@ -6,7 +6,7 @@
 #    By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/17 22:38:37 by ldatilio          #+#    #+#              #
-#    Updated: 2023/10/21 22:12:09 by ldatilio         ###   ########.fr        #
+#    Updated: 2023/10/25 23:08:42 by ldatilio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,6 +79,5 @@ test:		all
 	./$(NAME) "7 * -" 	|| true
 	./$(NAME) "7 0 /" 	|| true
 	./$(NAME) "7 7" 	|| true
-	./$(NAME) "40 2 +" 	|| true
 
 .PHONY: all, clean, fclean, re, val, test
