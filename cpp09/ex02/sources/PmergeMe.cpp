@@ -6,11 +6,19 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 00:15:48 by ldatilio          #+#    #+#             */
-/*   Updated: 2023/10/28 16:34:28 by ldatilio         ###   ########.fr       */
+/*   Updated: 2023/10/29 00:59:18 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
+
+PmergeMe::PmergeMe() {}
+PmergeMe::~PmergeMe() {}
+PmergeMe::PmergeMe(const PmergeMe& other) { *this = other; }
+PmergeMe& PmergeMe::operator=(const PmergeMe& other) {
+    (void)other;
+    return *this;
+}
 
 static const int K = 5;
 
@@ -73,10 +81,8 @@ void PmergeMe::mergeInsertSort(std::vector<int>& vec) {
 }
 
 /* ************************************************************************** */
-/*                                 for LIST                                   */
+/*                                for DEQUE                                   */
 /* ************************************************************************** */
-
-#include <deque>
 
 static void insertionSort(std::deque<int>& A, int p, int q) {
     for (int i = p; i < q; i++) {

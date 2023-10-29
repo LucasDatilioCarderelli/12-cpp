@@ -86,7 +86,15 @@ input.txt:
 	echo "2011-01-09 | 1" >> input.txt
 	echo "2012-01-11 | -1" >> input.txt
 	echo "2001-42-42" >> input.txt
+	echo "2001-42-42 | " >> input.txt
+	echo "2001-42-42 | 1.5" >> input.txt
 	echo "2012-01-11 | 1" >> input.txt
+	echo "2012-01-11 | " >> input.txt
+	echo "2012-01-11" >> input.txt
 	echo "2012-01-11 | 2147483648" >> input.txt
+	echo "2012-01-11 | 1000" >> input.txt
+	echo "2012-01-11 | 1001" >> input.txt
+	echo "2023-01-11 | 3" >> input.txt
+	echo "2000-01011 | 3" >> input.txt
 	
 .PHONY: all, clean, fclean, re, val, test

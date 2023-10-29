@@ -113,6 +113,9 @@ bool BitcoinExchange::isValidDate(std::string date) const {
     int day = static_cast<int>(strtol(date.substr(8, 2).c_str(), NULL, 10));
 	int daysInMonth[] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
+	if (date[4] != '-' || date[7] != '-')
+		throw BitcoinExchange::BadDateException();
+
     if (year < 0 || month < 1 || month > 12 || day < 1)
         return false;
 

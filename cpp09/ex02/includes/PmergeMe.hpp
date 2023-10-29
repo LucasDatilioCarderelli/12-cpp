@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 14:27:21 by ldatilio          #+#    #+#             */
-/*   Updated: 2023/10/28 16:37:45 by ldatilio         ###   ########.fr       */
+/*   Updated: 2023/10/29 02:11:46 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@
 
 class PmergeMe {
     PmergeMe(void);
-    PmergeMe(PmergeMe const &src);
+    PmergeMe(PmergeMe const &other);
     ~PmergeMe(void);
-    PmergeMe &operator=(PmergeMe const &rhs);
+    PmergeMe &operator=(PmergeMe const &other);
 
 public:
     static void mergeInsertSort(std::vector<int>& vec);
