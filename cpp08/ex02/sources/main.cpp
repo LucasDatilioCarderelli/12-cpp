@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 15:34:48 by ldatilio          #+#    #+#             */
-/*   Updated: 2023/10/15 21:40:29 by ldatilio         ###   ########.fr       */
+/*   Updated: 2023/10/23 04:55:49 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,8 @@ int main()
             std::cout << *it << ", ";
             ++it;
         }
+
+		std::cout << std::endl;
     }
 
     return 0;

@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 21:48:52 by ldatilio          #+#    #+#             */
-/*   Updated: 2023/10/12 22:42:18 by ldatilio         ###   ########.fr       */
+/*   Updated: 2023/10/23 04:58:55 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,23 +21,23 @@ int main() {
 
     try {
         std::vector<int>::iterator result1 = easyfind(v_numbers, 1);
-        std::cout << "Valor " << *result1 << " encontrado na posição "
+        std::cout << "Value " << *result1 << " found in pos: "
                   << std::distance(v_numbers.begin(), result1) << std::endl;
         
         std::deque<int>::iterator result2 = easyfind(d_numbers, 2);
-        std::cout << "Valor " << *result2 << " encontrado na posição "
+        std::cout << "Value " << *result2 << " found in pos: "
                   << std::distance(d_numbers.begin(), result2) << std::endl;
 
         std::list<int>::iterator result3 = easyfind(l_numbers, 3);
-        std::cout << "Valor " << *result3 << " encontrado na posição "
+        std::cout << "Value " << *result3 << " found in pos: "
                   << std::distance(l_numbers.begin(), result3) << std::endl;
 
         std::set<int>::iterator result4 = easyfind(s_numbers, 3);
-        std::cout << "Valor " << *result4 << " encontrado na posição "
+        std::cout << "Value " << *result4 << " found in pos: "
                   << std::distance(s_numbers.begin(), result4) << std::endl;
                   
         std::set<int>::iterator result5 = easyfind(s_numbers, 5);
-        std::cout << "Valor " << *result5 << " encontrado na posição "
+        std::cout << "Value " << *result5 << " found in pos: "
                   << std::distance(s_numbers.begin(), result5) << std::endl;
 
     } catch (const std::runtime_error& e) {

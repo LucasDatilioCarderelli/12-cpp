@@ -6,13 +6,16 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 23:07:40 by ldatilio          #+#    #+#             */
-/*   Updated: 2023/10/15 12:35:49 by ldatilio         ###   ########.fr       */
+/*   Updated: 2023/10/23 02:39:27 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
+#include <ctime>
 
 int main() {
+	srand((unsigned) time(0));
+
     std::cout << std::endl << "Test: Mandatory" << std::endl;
     {
         Span sp = Span(5);
@@ -32,7 +35,7 @@ int main() {
         std::vector<int> numbers(10000);
 
         for (int i = 0; i < 10000; i++) {
-            numbers[i] = i;
+            numbers[i] = rand();
         }
 
         sp.addRange(numbers.begin(), numbers.end());
@@ -64,10 +67,9 @@ int main() {
 
 	std::cout << std::endl << "Test: Full Exception" << std::endl;
     {
-        Span sp = Span(1);
-        sp.addNumber(1);
+        Span sp = Span();
         try {
-            sp.addNumber(2);
+            sp.addNumber(1);
         }
         catch (std::exception &e) {
             std::cerr << e.what() << std::endl;

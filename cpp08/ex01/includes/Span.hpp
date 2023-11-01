@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 23:08:41 by ldatilio          #+#    #+#             */
-/*   Updated: 2023/10/15 12:34:18 by ldatilio         ###   ########.fr       */
+/*   Updated: 2023/10/23 04:41:38 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,11 @@ public:
 
     template <typename T>
     void addRange(T begin, T end) {
+		unsigned int N_left = N - numbers.size();
+		if (std::distance(begin, end) > N_left)
+			throw SpanIsFullException();
         while (begin != end) {
-            addNumber(*begin);
+            numbers.push_back(*begin);
             ++begin;
         }
     }

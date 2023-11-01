@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 23:08:51 by ldatilio          #+#    #+#             */
-/*   Updated: 2023/10/15 12:34:23 by ldatilio         ###   ########.fr       */
+/*   Updated: 2023/10/23 05:21:32 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Span::Span() : N(0) {}
 Span::Span(unsigned int N) : N(N) {}
-Span::Span(const Span &other) : N(other.N), numbers(other.numbers) {}
+Span::Span(const Span &other) { *this = other; }
 Span::~Span() {}
 Span &Span::operator=(const Span &other) {
     if (this != &other) {
@@ -25,7 +25,7 @@ Span &Span::operator=(const Span &other) {
 }
 
 void Span::addNumber(int number) {
-    if (numbers.size() < N)     
+    if (numbers.size() < N)
         numbers.push_back(number);
     else
         throw SpanIsFullException();
@@ -50,13 +50,11 @@ int Span::shortestSpan() {
 
 int Span::longestSpan() {
     if (numbers.size() < 2)
-        throw NotEnoughNumbersException();
+		throw NotEnoughNumbersException();
 
-    std::vector<int> sortedNumbers = numbers;
-    std::sort(sortedNumbers.begin(), sortedNumbers.end());
+    std::sort(numbers.begin(), numbers.end());
 
-    int maxSpan = sortedNumbers.back() - sortedNumbers.front();
-    return maxSpan;
+    return numbers.back() - numbers.front();
 }
 
 const char* Span::SpanIsFullException::what() const throw() {
