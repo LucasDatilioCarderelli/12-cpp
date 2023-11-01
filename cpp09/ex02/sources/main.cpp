@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 23:20:07 by ldatilio          #+#    #+#             */
-/*   Updated: 2023/10/29 02:16:32 by ldatilio         ###   ########.fr       */
+/*   Updated: 2023/11/01 02:55:00 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void checkContainerOrder(Container& container) {
 	typename Container::const_iterator it = container.begin();
 	typename Container::const_iterator prev = it;
 	
+	it++;
 	while (it != container.end()) {
 		if  (*it < *prev) {
 			throw std::runtime_error("container is not ordered");
@@ -78,6 +79,7 @@ int main(int argc, char **argv) {
 		std::list<int> lst;
 		fillContainer(argc, argv, lst);
 		printContainer(lst, "Before: ");
+		// checkContainerOrder(lst);
 
 		/* **************************** vector ****************************** */
 		clock_t vectorStart = clock();
